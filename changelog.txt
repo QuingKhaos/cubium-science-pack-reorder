@@ -1,3 +1,5 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.0
-Date: ????
+Date: 2026-07-05
+  Changes:
+    - Reordered Cubic Science Packs to match the order of their original counterparts.
