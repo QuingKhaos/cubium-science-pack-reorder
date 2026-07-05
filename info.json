@@ -11,6 +11,7 @@
 
     "khaoslib >= 1.2.3",
 
-    "cubium >= 1.0.28"
+    "cubium >= 1.0.28",
+    "? science-tab >= 1.10.0"
   ]
 }

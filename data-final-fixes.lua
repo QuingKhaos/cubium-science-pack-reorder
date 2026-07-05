@@ -1,23 +1,32 @@
 local khaoslib_recipe = require("__khaoslib__.recipe")
 
-data:extend({
-  {
-    type = "item-subgroup",
-    name = "cubic-science",
-    group = "cubic",
-    order = "z",
-  },
-})
+if mods["science-tab"] then
+  data:extend({
+    {
+      type = "item-subgroup",
+      name = "cubic-basic-science-pack",
+      group = "science",
+      order = "p[cubic-science]",
+    },
+  })
 
-local cubic_science_packs = khaoslib_recipe.find(function(recipe)
-  return recipe.name:match("science%-pack%-cubic") ~= nil
-end)
+  local nauvis_science_packs = {
+    "automation",
+    "logistic",
+    "military",
+    "chemical",
+    "production",
+    "utility",
+    "space",
+  }
 
-for _, recipe in pairs(cubic_science_packs) do
-  local orig_science_pack = recipe:gsub("%-cubic", "")
+  for _, pack in pairs(nauvis_science_packs) do
+    local recipe = pack .. "-science-pack-cubic"
 
-  khaoslib_recipe:load(recipe)
-    :set {subgroup = "cubic-science"}
-    :set {order = data.raw["tool"][orig_science_pack].order}
-    :commit()
+    if khaoslib_recipe.exists(recipe) then
+      khaoslib_recipe:load(recipe)
+        :set {subgroup = "cubic-basic-science-pack"}
+        :commit()
+    end
+  end
 end
