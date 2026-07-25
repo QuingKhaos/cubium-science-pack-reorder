@@ -1,17 +1,14 @@
 {
   "name": "cubium-science-pack-reorder",
   "title": "Cubium Science Pack Reorder",
-  "description": "Reorders the Cubium science packs in the same order as in the base game.",
+  "description": "[DEPRECATED] Functionality migrated to Cubium and More.",
   "author": "QuingKhaos",
   "homepage": "https://discord.gg/SYmkaDjFCt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "factorio_version": "2.0",
   "dependencies": [
     "base >= 2.0.0",
 
-    "khaoslib >= 1.2.3",
-
-    "cubium >= 1.0.28",
-    "? science-tab >= 1.10.0"
+    "cubium-and-more >= 1.0.0"
   ]
 }
